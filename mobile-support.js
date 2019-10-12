@@ -17,12 +17,3 @@ const triggerKeyPress = keyCode => {
 });
 
 document.body.appendChild(swipeElement);
-
-//Prevent mobile scroll
-document.addEventListener("touchmove", event => {
-  event.preventDefault();
-});
-
-
-
-

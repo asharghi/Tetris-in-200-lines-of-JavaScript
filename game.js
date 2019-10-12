@@ -197,4 +197,4 @@ const initTetris = ({ width, height, pixelSize }) => {
         }
     }
 };
-initTetris({ width: 10, height: 20, pixelSize: 20 });
+initTetris({ width: 10, height: 20, pixelSize: 35 });

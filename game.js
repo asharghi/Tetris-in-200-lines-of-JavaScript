@@ -1,10 +1,9 @@
 const initTetris = ({ width, height, pixelSize }) => {
-    const pointsLabel = "Score: ";
     let startPosition = Math.floor((width) / 2) + width + width;
     let position = startPosition;
     let rotation = 0, currentScore = 0;
     let currentBlock = false, nextBlock = false;
-    const UpdateScore = () => { document.querySelector(".tetris-score").innerHTML = pointsLabel + currentScore; }
+    const UpdateScore = () => { document.querySelector(".tetris-score").innerHTML = currentScore; }
     const clearBoard = () => { document.querySelectorAll(".pixel-fill").forEach(node => { node.classList.remove("pixel-fill") }); }
     const renderBlock = (block, rotation, position) => {
         clearBoard();
@@ -67,7 +66,9 @@ const initTetris = ({ width, height, pixelSize }) => {
         }
         .tetris-score{
           color: #37a48b;
-          margin-top: 10px;
+          font-size: 3em;
+          margin-top: 1em;
+          text-align: center;
           font-family: monospace;
         }
         .tetris-pixel.pixel-stop{
@@ -101,7 +102,7 @@ const initTetris = ({ width, height, pixelSize }) => {
         }
         let scoreNode = document.createElement('div');
         scoreNode.className = "tetris-score";
-        scoreNode.innerHTML = pointsLabel + "0";
+        scoreNode.innerHTML = "0";
         gameNode.appendChild(scoreNode);
     }
     AddHtml(); AddStyle();
@@ -196,5 +197,4 @@ const initTetris = ({ width, height, pixelSize }) => {
                 break;
         }
     }
-};
-initTetris({ width: 10, height: 20, pixelSize: 35 });
+};initTetris({ width: 10, height: 20, pixelSize: 35 });

@@ -12,7 +12,7 @@ const triggerKeyPress = keyCode => {
 { keyCode: 39, eventName: "swiperight" },
 { keyCode: 40, eventName: "swipedown" }].forEach(s => {
   swipeElement.addEventListener(s.eventName, (e) => {
-    console.log(e.distance);
+    e.preventDefault();
     triggerKeyPress(s.keyCode);
   });
 });

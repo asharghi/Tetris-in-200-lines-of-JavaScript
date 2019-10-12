@@ -19,10 +19,9 @@ const triggerKeyPress = keyCode => {
 document.body.appendChild(swipeElement);
 
 //Prevent mobile scroll
-let mobileStyle = document.createElement("style");
-mobileStyle.innerHTML = "body, html { position: fixed; }";
-document.body.appendChild(mobileStyle)
-
+document.addEventListener("touchmove", event => {
+  event.preventDefault();
+});
 
 
 

@@ -12,12 +12,17 @@ const triggerKeyPress = keyCode => {
 { keyCode: 39, eventName: "swiperight" },
 { keyCode: 40, eventName: "swipedown" }].forEach(s => {
   swipeElement.addEventListener(s.eventName, (e) => {
-    e.preventDefault();
     triggerKeyPress(s.keyCode);
   });
 });
 
 document.body.appendChild(swipeElement);
+
+//Prevent mobile scroll
+let mobileStyle = document.createElement("style");
+mobileStyle.innerHTML = "body, html { position: fixed; }";
+document.body.appendChild(mobileStyle)
+
 
 
 
